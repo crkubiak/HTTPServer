@@ -9,7 +9,7 @@ package com.Spike;
 public class HTTPServer implements Runnable {
 
     static final File WEB_ROOT = new File(".");
-    static final String DEFAULT_FILE = "index.html;";
+    static final String DEFAULT_FILE = "/index.html";
     static final String FILE_NOT_FOUND = "404.html";
     static final String METHOD_NOT_SUPPORTED = "not_supported.html";
 
@@ -72,7 +72,7 @@ public class HTTPServer implements Runnable {
             String method = parse.nextToken().toUpperCase();
             //we get file requested
             fileRequested = parse.nextToken().toLowerCase();
-
+            System.out.println("parse: " + parse + "  method: " + method + "  file requested: " + fileRequested);
             //we suport only GET and HEAD methods, we check
             if (!method.equals("GET") && !method.equals("HEAD")) {
                 if (verbose) {
@@ -91,7 +91,7 @@ public class HTTPServer implements Runnable {
                 out.println("Date: " + new Date());
                 out.println("Content-type: " + contentMimeType);
                 out.println("Content-length: " + file.length());
-                out.println(); // blank line betwqeen headers and content
+                out.println(); // blank line between headers and content
                 out.flush(); //flush character output stream buffer
                 //file
                 dataOut.write(fileData, 0, fileLength);
@@ -99,11 +99,13 @@ public class HTTPServer implements Runnable {
 
             } else {
                 //GET or HEAD method
-                if (fileRequested.endsWith("/")) {
+                if (fileRequested.endsWith("/simple_get")) {
                     fileRequested += DEFAULT_FILE;
+                    System.out.println("Line 104 " + fileRequested);
                 }
 
                 File file = new File(WEB_ROOT, fileRequested);
+
                 int fileLength = (int) file.length();
                 String content = getContentType(fileRequested);
 
@@ -119,8 +121,8 @@ public class HTTPServer implements Runnable {
                     out.println(); // blank line between headers and content
                     out.flush(); //flush character output stream buffer
 
-                    dataOut.write(fileData, 0, fileLength);
-                    dataOut.flush();
+//                    dataOut.write(fileData, 0, fileLength);
+//                    dataOut.flush();
                 }
 
                 if (verbose) {
