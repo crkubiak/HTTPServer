@@ -54,12 +54,11 @@ public class Request {
     public boolean parse() throws IOException {
         String initialLine = in.readLine();
         log(initialLine);
-        StringTokenizer tok = new StringTokenizer(initialLine);
+        StringTokenizer token = new StringTokenizer(initialLine);
         String[] components = new String[3];
         for (int i = 0; i < components.length; i++)  {
-            // TODO support HTTP/1.0?
-            if (tok.hasMoreTokens())  {
-                components[i] = tok.nextToken();
+            if (token.hasMoreTokens())  {
+                components[i] = token.nextToken();
             } else  {
                 return false;
             }
@@ -68,7 +67,6 @@ public class Request {
         method = components[0];
         fullUrl = components[1];
 
-        // Consume headers
         while (true)  {
             String headerLine = in.readLine();
             log(headerLine);
@@ -83,9 +81,6 @@ public class Request {
             headers.put(headerLine.substring(0, separator),
                     headerLine.substring(separator + 1));
         }
-
-        // TODO should look for host header, Connection: Keep-Alive header,
-        // Content-Transfer-Encoding: chunked
 
         if (components[1].indexOf("?") == -1)  {
             path = components[1];

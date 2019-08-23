@@ -47,21 +47,16 @@ public class HttpServer {
         server.addHandler("GET", "/get_with_body", new NotImplementedHandler());
         server.addHandler("GET", "/redirect", new RedirectHandler());
         server.addHandler("OPTIONS", "/method_options", new OptionsHandler());
-        server.addHandler("OPTIONS", "/method_options2", (request, response) -> {
-            response.setResponseCode(200, "OK");
-            response.addHeader("Content-Type", "text/html");
-            response.addHeader("Allow", "GET, HEAD, OPTIONS, PUT, POST");
-        });
+        server.addHandler("OPTIONS", "/method_options2", new OptionsHandler2());
 
         server.addHandler("POST", "/echo_body", (request, response) -> {
-            InputStream in = request.getBody();
-            System.out.println(in);
-            String postBody = "some body";
+            InputStream body = request.getBody();
             response.setResponseCode(200, "OK");
             response.addHeader("Content-Type", "text/html");
             response.addHeader("Allow", "GET, HEAD, OPTIONS, PUT, POST");
-            response.addBody(postBody);
-            System.out.println("Request: \n" + request);
+//            response.addBody("some body");
+            response.addBody(String.valueOf(body.toString().getBytes()));
+//            System.out.print(request.getBody());
         });
 
 //        server.addHandler("POST", "/echo_body", new Handler() {

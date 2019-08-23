@@ -14,15 +14,11 @@ public class SocketHandler implements Runnable {
     private Handler defaultHandler;
     private Map<String, Map<String, Handler>> handlers;
 
-    public SocketHandler(Socket socket,
-                         Map<String, Map<String, Handler>> handlers)  {
+    public SocketHandler(Socket socket, Map<String, Map<String, Handler>> handlers)  {
         this.socket = socket;
         this.handlers = handlers;
     }
 
-    /**
-     * Simple responses like errors.  Normal reponses come from handlers.
-     */
     private void respond(int statusCode, String msg, OutputStream out) throws IOException {
         String responseLine = "HTTP/1.1 " + statusCode + " " + msg + "\r\n\r\n";
         log(responseLine);
@@ -43,7 +39,6 @@ public class SocketHandler implements Runnable {
                 return;
             }
 
-            // TODO most specific handler
             boolean foundHandler = false;
             Response response = new Response(out);
             Map<String, Handler> methodHandlers = handlers.get(request.getMethod());
