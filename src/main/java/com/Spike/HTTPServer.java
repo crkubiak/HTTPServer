@@ -9,7 +9,7 @@ package com.Spike;
 public class HTTPServer implements Runnable {
 
     static final File WEB_ROOT = new File(".");
-    static final String DEFAULT_FILE = "/index.html";
+    static final String DEFAULT_FILE = "index.html";
     static final String FILE_NOT_FOUND = "404.html";
     static final String METHOD_NOT_SUPPORTED = "not_supported.html";
 
@@ -58,34 +58,34 @@ public class HTTPServer implements Runnable {
         String fileRequested = null;
 
         try {
-            //read characters from the client via input stream on the socket
+                                                                                        //read characters from the client via input stream on the socket
             in = new BufferedReader(new InputStreamReader(connect.getInputStream()));
-            //we get character output stream to the client for headers
+                                                                                        //we get character output stream to the client for headers
             out = new PrintWriter(connect.getOutputStream());
-            // get binary output stream to client for requested data
+                                                                                        // get binary output stream to client for requested data
             dataOut = new BufferedOutputStream(connect.getOutputStream());
 
-            //get first line of the request from the client
+                                                                                        //get first line of the request from the client
             String input = in.readLine();
-            //parse the request with a string tokenizer
+                                                                                        //parse the request with a string tokenizer
             StringTokenizer parse = new StringTokenizer(input);
             String method = parse.nextToken().toUpperCase();
-            //we get file requested
+                                                                                        //we get file requested
             fileRequested = parse.nextToken().toLowerCase();
             System.out.println("parse: " + parse + "  method: " + method + "  file requested: " + fileRequested);
-            //we suport only GET and HEAD methods, we check
+                                                                                        //we suport only GET and HEAD methods, we check
             if (!method.equals("GET") && !method.equals("HEAD")) {
                 if (verbose) {
                     System.out.println("501 Not Implemented : " + method + " method.");
                 }
-                //we return the not supported file to client
+                                                                                        //we return the not supported file to client
                 File file = new File(WEB_ROOT, METHOD_NOT_SUPPORTED);
                 int fileLength = (int) file.length();
                 String contentMimeType = "text/html";
-                //read content to return to client
+                                                                                        //read content to return to client
                 byte[] fileData = readFileData(file, fileLength);
 
-                //we send HTTP Headers with data to client
+                                                                                        //we send HTTP Headers with data to client
                 out.println("HTTP/1.1 501 Not Implemented");
                 out.println("Server: Java HTTP Server");
                 out.println("Date: " + new Date());
@@ -99,7 +99,7 @@ public class HTTPServer implements Runnable {
 
             } else {
                 //GET or HEAD method
-                if (fileRequested.endsWith("/simple_get")) {
+                if (fileRequested.endsWith("/")) {
                     fileRequested += DEFAULT_FILE;
                     System.out.println("Line 104 " + fileRequested);
                 }
