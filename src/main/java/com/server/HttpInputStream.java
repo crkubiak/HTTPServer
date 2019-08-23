@@ -9,7 +9,7 @@ import java.util.Map;
 class HttpInputStream extends InputStream  {
     private BufferedReader source;
     private int bytesRemaining;
-    private boolean chunked = false;
+    private boolean chunked = true;
 
     public HttpInputStream(BufferedReader source, Map<String, String> headers) throws IOException  {
         this.source = source;

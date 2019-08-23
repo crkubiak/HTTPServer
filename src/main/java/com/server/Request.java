@@ -31,7 +31,6 @@ public class Request {
         return fullUrl;
     }
 
-    // TODO support mutli-value headers
     public String getHeader(String headerName)  {
         return headers.get(headerName);
     }

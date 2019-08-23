@@ -20,6 +20,7 @@ public class FileHandler implements Handler {
                 buf.append((char) c);
             }
             response.addBody(buf.toString());
+            System.out.println(response);
         } catch (FileNotFoundException ex) {
             response.setResponseCode(404, "Not Found");
         }
