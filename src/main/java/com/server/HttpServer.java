@@ -2,8 +2,7 @@ package com.server;
 
 import com.server.handlers.*;
 
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;
 import java.util.HashMap;
@@ -50,13 +49,16 @@ public class HttpServer {
         server.addHandler("OPTIONS", "/method_options2", new OptionsHandler2());
 
         server.addHandler("POST", "/echo_body", (request, response) -> {
+            //buffered reader page 478 head first java
             InputStream body = request.getBody();
+            InputStreamReader test = new InputStreamReader(body);
+            BufferedReader buffy = new BufferedReader(test);
+
             response.setResponseCode(200, "OK");
             response.addHeader("Content-Type", "text/html");
             response.addHeader("Allow", "GET, HEAD, OPTIONS, PUT, POST");
-//            response.addBody("some body");
-            response.addBody(String.valueOf(body.toString().getBytes()));
-//            System.out.print(request.getBody());
+            response.addBody(buffy.readLine());
+//            System.out.println("Buffy: " + buffy.readLine());
         });
 
 //        server.addHandler("POST", "/echo_body", new Handler() {
