@@ -1,4 +1,4 @@
-https://travis-ci.com/crkubiak/HTTPServer.svg?branch=master
+[![Build Status](https://travis-ci.com/crkubiak/HTTPServer.svg?branch=master)](https://travis-ci.com/crkubiak/HTTPServer)
 
 # HTTPServer
 Language: Java
