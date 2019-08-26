@@ -10,13 +10,11 @@ class HttpInputStream extends InputStream  {
     private Reader source;
     private int bytesRemaining;
 
-    public HttpInputStream(Reader source, Map<String, String> headers) throws IOException  {
+    HttpInputStream(Reader source, Map<String, String> headers) throws IOException  {
         this.source = source;
 
         try  {
-
             String headerValue = headers.get("Content-Length");
-//            System.out.println("[" + headerValue + "]");
             bytesRemaining = Integer.parseInt(headerValue.trim());
         } catch (NumberFormatException e)  {
             throw new IOException("Malformed or missing Content-Length header");

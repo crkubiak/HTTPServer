@@ -10,33 +10,20 @@ import java.util.StringTokenizer;
 public class Request {
     private String method;
     private String path;
-    private String fullUrl;
-    private Map<String, String> headers = new HashMap<String, String>();
-    private Map<String, String> queryParameters = new HashMap<String, String>();
+    private Map<String, String> headers = new HashMap<>();
+    private Map<String, String> queryParameters = new HashMap<>();
     private BufferedReader in;
 
     public Request(BufferedReader in)  {
         this.in = in;
     }
 
-    public String getMethod()  {
+    String getMethod()  {
         return method;
     }
 
-    public String getPath()  {
+    String getPath()  {
         return path;
-    }
-
-    public String getFullUrl()  {
-        return fullUrl;
-    }
-
-    public String getHeader(String headerName)  {
-        return headers.get(headerName);
-    }
-
-    public String getParameter(String paramName)  {
-        return queryParameters.get(paramName);
     }
 
     private void parseQueryParameters(String queryString)  {
@@ -51,7 +38,7 @@ public class Request {
         }
     }
 
-    public boolean parse() throws IOException {
+    boolean parse() throws IOException {
         String initialLine = in.readLine();
         log(initialLine);
         StringTokenizer token = new StringTokenizer(initialLine);
@@ -65,7 +52,7 @@ public class Request {
         }
 
         method = components[0];
-        fullUrl = components[1];
+
 
         while (true)  {
             String headerLine = in.readLine();
@@ -82,7 +69,7 @@ public class Request {
                     headerLine.substring(separator + 1));
         }
 
-        if (components[1].indexOf("?") == -1)  {
+        if (!components[1].contains("?"))  {
             path = components[1];
         } else  {
             path = components[1].substring(0, components[1].indexOf("?"));

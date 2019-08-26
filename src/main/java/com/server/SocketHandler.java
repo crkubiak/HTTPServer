@@ -11,10 +11,9 @@ import java.util.Map;
 
 public class SocketHandler implements Runnable {
     private Socket socket;
-    private Handler defaultHandler;
     private Map<String, Map<String, Handler>> handlers;
 
-    public SocketHandler(Socket socket, Map<String, Map<String, Handler>> handlers)  {
+    SocketHandler(Socket socket, Map<String, Map<String, Handler>> handlers)  {
         this.socket = socket;
         this.handlers = handlers;
     }

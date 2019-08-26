@@ -4,7 +4,6 @@ import com.server.Request;
 import com.server.Response;
 
 public class NotImplementedHandler implements Handler {
-
     @Override
     public void handle(Request request, Response response) {
         response.setResponseCode(405, "METHOD NOT ALLOWED");

@@ -7,6 +7,9 @@ jdk: oraclejdk11
 
 script:
   - ./gradlew build --scan -s
+  - ./gradlew test
+  - java -jar build/libs/HTTPServer-1.0-SNAPSHOT.jar &
+  - ./acceptance-tests.sh $GIT_TOKEN $GIT_LOGIN
 
 before_cache:
   - rm -f  $HOME/.gradle/caches/modules-2/modules-2.lock

@@ -10,19 +10,17 @@ import java.util.Map;
 
 public class HttpServer {
     private int port;
-    private Map<String, Map<String, Handler>> handlers = new HashMap<String, Map<String, Handler>>();
+    private Map<String, Map<String, Handler>> handlers = new HashMap<>();
 
     private HttpServer(int port)  {
         this.port = port;
     }
 
     private void addHandler(String method, String path, Handler handler)  {
-        Map<String, Handler> methodHandlers = handlers.get(method);
-        if (methodHandlers == null)  {
-            methodHandlers = new HashMap<String, Handler>();
-            handlers.put(method, methodHandlers);
-        }
+        Map<String, Handler> methodHandlers = handlers.computeIfAbsent(method, k -> new HashMap<>());
         methodHandlers.put(path, handler);
+        System.out.println("Key: " + methodHandlers.keySet().toString());
+        System.out.println("Value: " + methodHandlers.values().toString());
     }
 
     private void start() throws IOException {
@@ -46,44 +44,11 @@ public class HttpServer {
         server.addHandler("GET", "/get_with_body", new NotImplementedHandler());
         server.addHandler("GET", "/redirect", new RedirectHandler());
         server.addHandler("OPTIONS", "/method_options", new OptionsHandler());
+        server.addHandler("GET", "/method_options", new GetHandler());
+        server.addHandler("HEAD", "/method_options", new HeadHandler());
         server.addHandler("OPTIONS", "/method_options2", new OptionsHandler2());
+        server.addHandler("POST", "/echo_body", new PostHandler());
 
-        server.addHandler("POST", "/echo_body", (request, response) -> {
-            //buffered reader page 478 head first java
-            InputStream body = request.getBody();
-            InputStreamReader test = new InputStreamReader(body);
-            BufferedReader buffy = new BufferedReader(test);
-
-            response.setResponseCode(200, "OK");
-            response.addHeader("Content-Type", "text/html");
-            response.addHeader("Allow", "GET, HEAD, OPTIONS, PUT, POST");
-            response.addBody(buffy.readLine());
-//            System.out.println("Buffy: " + buffy.readLine());
-        });
-
-//        server.addHandler("POST", "/echo_body", new Handler() {
-//            public void handle(Request request, Response response) throws IOException {
-//                StringBuffer buf = new StringBuffer();
-//                InputStream in = request.getBody();
-//                int c;
-//                while ((c = in.read()) != -1) {
-//                    buf.append((char) c);
-//                }
-//                String[] components = buf.toString().split("&");
-//                Map<String, String> urlParameters = new HashMap<String, String>();
-//                for (String component : components) {
-//                    String[] pieces = component.split("=");
-//                    urlParameters.put(pieces[0], pieces[1]);
-//                }
-//                String html = "<body>Welcome, " + urlParameters.get("username") + "</body>";
-//
-//                response.setResponseCode(200, "OK");
-//                response.addHeader("Content-Type", "text/html");
-//                response.addBody(html);
-//            }
-//        });
-
-        server.addHandler("POST", "/test", new FileHandler());  // Default handler
         server.start();
     }
 }

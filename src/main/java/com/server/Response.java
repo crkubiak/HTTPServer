@@ -9,7 +9,7 @@ public class Response {
     private OutputStream out;
     private int statusCode;
     private String statusMessage;
-    private Map<String, String> headers = new HashMap<String, String>();
+    private Map<String, String> headers = new HashMap<>();
     private String body;
 
     public Response(OutputStream out)  {
@@ -30,7 +30,7 @@ public class Response {
         this.body = body;
     }
 
-    public void send() throws IOException {
+    void send() throws IOException {
         headers.put("Connection", "Close");
         out.write(("HTTP/1.1 " + statusCode + " " + statusMessage + "\r\n").getBytes());
         for (String headerName : headers.keySet())  {
