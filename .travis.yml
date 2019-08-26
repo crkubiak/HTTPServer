@@ -3,10 +3,11 @@ install: true
 
 os: linux
 dist: trusty
-jdk: oraclejdk11
+jdk: openjdk11
 
 script:
-  - ./gradlew build --scan -s
+  - ./gradlew build
+  - ./gradlew jar
   - ./gradlew test
   - java -jar build/libs/HTTPServer-1.0-SNAPSHOT.jar &
   - ./acceptance-tests.sh $GIT_TOKEN $GIT_LOGIN

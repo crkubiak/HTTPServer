@@ -2,29 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="387b416f-70ef-4db9-8835-d57981abe83a" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/acceptance-tests.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/fileHashes/fileHashes.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/fileHashes/fileHashes.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/taskHistory/taskHistory.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/taskHistory/taskHistory.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.travis.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.travis.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Spike/404.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Spike/HTTPServer.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Spike/index.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/Spike/not_supported.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/server/HttpInputStream.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/server/HttpInputStream.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/server/HttpServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/server/HttpServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/server/Request.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/server/Request.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/server/Response.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/server/Response.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/server/Router.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/server/SocketHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/server/SocketHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/server/handlers/FileHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/server/handlers/GetHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/server/handlers/GetHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/server/handlers/NotImplementedHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/server/handlers/NotImplementedHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/server/handlers/OptionsHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/server/handlers/OptionsHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/server/handlers/PostHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/server/handlers/PostHandler.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
