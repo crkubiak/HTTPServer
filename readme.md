@@ -1,3 +1,5 @@
+https://travis-ci.com/crkubiak/HTTPServer.svg?branch=master
+
 # HTTPServer
 Language: Java
 
