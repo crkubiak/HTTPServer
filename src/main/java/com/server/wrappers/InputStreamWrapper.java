@@ -6,11 +6,11 @@ import java.io.InputStream;
 import java.io.Reader;
 import java.util.Map;
 
-class HttpInputStream extends InputStream  {
+class InputStreamWrapper extends InputStream  {
     private Reader source;
     private int bytesRemaining;
 
-    HttpInputStream(Reader source, Map<String, String> headers) throws IOException  {
+    public InputStreamWrapper(Reader source, Map<String, String> headers) throws IOException  {
         this.source = source;
 
         try  {
