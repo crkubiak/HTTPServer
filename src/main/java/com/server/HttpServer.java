@@ -1,6 +1,8 @@
 package com.server;
 
 import com.server.handlers.*;
+import com.server.interfaces.SocketInterface;
+import com.server.wrappers.ServerSocketWrapper;
 
 import java.io.*;
 import java.net.ServerSocket;
@@ -9,11 +11,12 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class HttpServer {
-    private int port;
+    private SocketInterface socketInterface;
+    private int port = 5000;
     private Map<String, Map<String, Handler>> handlers = new HashMap<>();
 
-    private HttpServer(int port)  {
-        this.port = port;
+    public HttpServer(SocketInterface socketInterface)  {
+        this.socketInterface = socketInterface;
     }
 
     private void addHandler(String method, String path, Handler handler)  {
@@ -23,7 +26,7 @@ public class HttpServer {
         System.out.println("Value: " + methodHandlers.values().toString());
     }
 
-    private void start() throws IOException {
+    public void start() throws IOException  {
         ServerSocket socket = new ServerSocket(port);
         System.out.println("Listening on port " + port);
         Socket client;
@@ -36,7 +39,8 @@ public class HttpServer {
     }
 
     public static void main(String[] args) throws IOException  {
-        HttpServer server = new HttpServer(5000);
+        SocketInterface serverSocket = new ServerSocketWrapper();
+        HttpServer server = new HttpServer(serverSocket);
 
         server.addHandler("GET", "/simple_get", new GetHandler());
         server.addHandler("HEAD", "/simple_get", new HeadHandler());

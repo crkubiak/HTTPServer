@@ -1,5 +1,8 @@
 package com.server;
 
+import com.server.interfaces.RequestInterface;
+import com.server.wrappers.InputStreamWrapper;
+
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -93,6 +96,6 @@ public class Request {
     }
 
     public InputStream getBody() throws IOException {
-        return new HttpInputStream(in, headers);
+        return new InputStreamWrapper(in, headers);
     }
 }

@@ -1,5 +1,7 @@
 package com.server.wrappers;
 
+import com.server.interfaces.SocketInterface;
+
 import java.io.*;
 import java.net.ServerSocket;
 import java.net.Socket;

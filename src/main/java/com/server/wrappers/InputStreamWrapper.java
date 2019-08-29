@@ -1,4 +1,4 @@
-package com.server;
+package com.server.wrappers;
 
 
 import java.io.IOException;
@@ -6,7 +6,7 @@ import java.io.InputStream;
 import java.io.Reader;
 import java.util.Map;
 
-class InputStreamWrapper extends InputStream  {
+public class InputStreamWrapper extends InputStream  {
     private Reader source;
     private int bytesRemaining;
 

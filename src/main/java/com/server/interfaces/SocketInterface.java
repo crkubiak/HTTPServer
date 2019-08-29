@@ -1,4 +1,4 @@
-package com.server.wrappers;
+package com.server.interfaces;
 
 public interface SocketInterface {
     void createAndListen(int port);
