@@ -7,17 +7,6 @@
       <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/taskHistory/taskHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/taskHistory/taskHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/4.10.3/taskHistory/taskHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/4.10.3/taskHistory/taskHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/server/HttpServer.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/server/HttpServer.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/server/Request.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/server/Request.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/server/interfaces/RequestInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/server/interfaces/RequestInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/server/interfaces/SocketInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/server/interfaces/SocketInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/server/wrappers/InputStreamWrapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/server/wrappers/InputStreamWrapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/server/wrappers/ServerSocketWrapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/server/wrappers/ServerSocketWrapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/server/HttpServerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/server/HttpServerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/server/handlers/GetHandlerTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/server/handlers/GetHandlerTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/com/server/wrappers/ServerSocketWrapperSpy.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/com/server/wrappers/ServerSocketWrapperSpy.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
