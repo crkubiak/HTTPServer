@@ -16,7 +16,7 @@ public class Response {
         this.out = out;
     }
 
-    public void setResponseCode(int statusCode, String statusMessage)  {
+    public void setStatusCode(int statusCode, String statusMessage)  {
         this.statusCode = statusCode;
         this.statusMessage = statusMessage;
     }
@@ -40,6 +40,21 @@ public class Response {
         if (body != null)  {
             out.write(body.getBytes());
         }
+    }
+
+    public int getStatusCode() {
+        return statusCode;
+    }
+
+    public String getStatusMessage() {
+        return statusMessage;
+    }
+
+    public String getBody() {
+        return body;
+    }
+    public Map<String, String> getHeaders() {
+        return headers;
     }
 }
 

@@ -6,7 +6,7 @@ import com.server.Response;
 public class NotImplementedHandler implements Handler {
     @Override
     public void handle(Request request, Response response) {
-        response.setResponseCode(405, "METHOD NOT ALLOWED");
+        response.setStatusCode(405, "METHOD NOT ALLOWED");
         response.addHeader("Content-Type", "text/html");
         response.addHeader("Allow", "HEAD, OPTIONS");
     }

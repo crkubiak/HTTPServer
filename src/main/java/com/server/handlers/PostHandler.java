@@ -13,9 +13,8 @@ public class PostHandler implements Handler {
         InputStream body = request.getBody();
         InputStreamReader test = new InputStreamReader(body);
         BufferedReader buffy = new BufferedReader(test);
-        response.setResponseCode(200, "OK");
+        response.setStatusCode(200, "OK");
         response.addHeader("Content-Type", "text/html");
-        response.addHeader("Allow", "GET, HEAD, OPTIONS, PUT, POST");
         String line;
         boolean firstLine = true;
         StringBuilder builtResponse = new StringBuilder();

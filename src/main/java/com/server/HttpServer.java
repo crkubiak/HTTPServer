@@ -22,8 +22,8 @@ public class HttpServer {
     private void addHandler(String method, String path, Handler handler)  {
         Map<String, Handler> methodHandlers = handlers.computeIfAbsent(method, k -> new HashMap<>());
         methodHandlers.put(path, handler);
-        System.out.println("Key: " + methodHandlers.keySet().toString());
-        System.out.println("Value: " + methodHandlers.values().toString());
+//        System.out.println("Key: " + methodHandlers.keySet().toString());
+//        System.out.println("Value: " + methodHandlers.values().toString());
     }
 
     public void start() throws IOException  {
